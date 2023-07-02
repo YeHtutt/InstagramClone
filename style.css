@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -30,7 +31,7 @@ button {
 }
 
 .navBar {
-  width: 25vw !important;
+  width: 25vw ;
   min-width: 350px;
   height: 100vh;
   background-color: lightgray;
@@ -104,6 +105,8 @@ button span {
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 25px;
+
+  align-items: center;
 }
 
 .peopleContent {
@@ -278,4 +281,140 @@ button span {
   margin-bottom: 25px;
   padding: 10px;
   cursor: pointer;
+}
+
+/*Responsive*/
+@media (max-width: 1120px) {
+  .menu {
+    padding-left: 0;
+  }
+
+  .navBar {
+    width: 250px !important;
+    min-width: 0px;
+  }
+}
+
+@media (max-width: 800px) {
+  .search img{
+    display: none;
+  }
+  .navHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 180px;
+  }
+
+  .navBar {
+    width: 200px !important;
+  }
+
+  .footer a {
+    display: none;
+  }
+
+  .footer {
+    width: 180px;
+  }
+}
+
+@media (max-width: 650px) {
+  .contentContainer {
+    padding-bottom: 80px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column-reverse !important;
+  }
+
+  .navBar {
+    position: relative;
+    width: 100% !important;
+    height: max-content;
+    padding-top: 0px;
+  }
+
+  .navHeader{
+    display: none;
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    height: auto;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: lightgray;
+  }
+
+  .menu span {
+    display: none;
+  }
+
+  .search input{
+    display: none;
+  }
+
+  .contentContainer {
+    width: 100vw !important;
+  }
+
+  .postContainer {
+    align-items: flex-start !important;
+    margin-left: 10px;
+  }
+
+  .peopleContent {
+    margin-left: 0;
+    width: 90vw;
+  }
+
+  .peopleContainer {
+    align-items: flex-start !important;
+    margin-left: 10px;
+  }
+
+  .scrollNavContainer {
+    margin-left: 0;
+    width: 90vw;
+  }
+
+  .card {
+    width: 90vw;
+  }
+
+  .search img{
+    display: block;
+  }
+
+  .menu button {
+    border-top: 5px solid transparent;
+  }
+
+  .menu button:hover {
+    border-right: none;
+    border-top: 5px solid red;
+  }
+
+  .menu img {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .search img{
+    display: none;
+  }
+
+  .menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: lightgray;
+  }
 }

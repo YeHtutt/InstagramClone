@@ -52,55 +52,56 @@ function render() {
 
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
-        content.innerHTML += /*html*/`
-    <div class="card">
-        <div class="cardHead">
-            <img src="${post['profileImg']}" >
-            <div class="cardTitle">
-                <h2>${post['author']}</h2>
-                <span>${post['location']}</span>
-            </div>
-        </div>
-    
-        <img class="postImage" src="${post['image']}">
-
-        <div class="iconsContainer"> 
-            <span class="leftIcons">
-                <img class="clickableIcon" id="heartIcon${i}" src="img/heart.png" onclick="addLike('${i}')">
-                <img src="img/message.png">
-                <img src="img/sprechblase.png">
-            </span>
-            <span>
-                <img class="clickableIcon" id="bookMark${i}" src="img/bookmark_black.png" onclick="addBookMark('${i}')">
-            </span>
-        </div>
-
-        <div id="likes${i}" class="likes"><b>Gefällt ${post['likes']} Mal</b></div>
-
-        <div class="description">
-            <span><b>${post['author']}:</b> </span>
-            <span>${post['description']}</span>
-        </div>
-
-        <div class="comments" id="commentContent${i}"></div>
-
-        <div class="cardTextField">
-            <input id="commentInput${i}" placeholder="Kommentar">
-            <button onclick ="addComment('${i}')">Posten</button>
-        </div>
-    </div>
-    `;
+        content.innerHTML += instaCardTemplate(i, post);
 
         let comments = document.getElementById(`commentContent${i}`);
 
         for (let j = 0; j < post[`comments`].length; j++) {
             const comment = post[`comments`][j];
             load(j);
-
             comments.innerHTML += `<div><b>Ye Htut Aung:</b> ${comment}</div>`;
         }
     }
+}
 
+function instaCardTemplate(i, post) {
+ return `<div class="card">
+ <div class="cardHead">
+     <img src="${post['profileImg']}" >
+     <div class="cardTitle">
+         <h2>${post['author']}</h2>
+         <span>${post['location']}</span>
+     </div>
+ </div>
+
+ <img class="postImage" src="${post['image']}">
+
+ <div class="iconsContainer"> 
+     <span class="leftIcons">
+         <img class="clickableIcon" id="heartIcon${i}" src="img/heart.png" onclick="addLike('${i}')">
+         <img src="img/message.png">
+         <img src="img/sprechblase.png">
+     </span>
+     <span>
+         <img class="clickableIcon" id="bookMark${i}" src="img/bookmark_black.png" onclick="addBookMark('${i}')">
+     </span>
+ </div>
+
+ <div id="likes${i}" class="likes"><b>Gefällt ${post['likes']} Mal</b></div>
+
+ <div class="description">
+     <span><b>${post['author']}:</b> </span>
+     <span>${post['description']}</span>
+ </div>
+
+ <div class="comments" id="commentContent${i}"></div>
+
+ <div class="cardTextField">
+     <input id="commentInput${i}" placeholder="Kommentar">
+     <button onclick ="addComment('${i}')">Posten</button>
+ </div>
+</div>
+ `;
 }
 
 function save(i) {
