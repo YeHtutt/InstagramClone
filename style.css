@@ -1,0 +1,217 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+}
+
+.demo-button {
+  border: none;
+  background-color: transparent;
+}
+
+.navBar {
+  width: 25vw !important;
+  min-width: 350px;
+  height: 100vh;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+  position: fixed;
+  top: 0;
+  justify-content: space-between;
+}
+
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.navHeader {
+  width: 230px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#MyInsta {
+  font-family: 'Dancing Script', cursive !important;
+  font-weight: 700 !important;
+  font-size: 32px !important;
+}
+
+.menu {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 25%;
+}
+
+.menu button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.menu button:hover {
+  border-right: 5px solid red;
+}
+
+.menu img {
+  height: 35px;
+  width: auto;
+  margin-right: 10px;
+}
+
+button span {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.postContainer {
+  box-sizing: border-box;
+  width: 60%;
+  height: max-content;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.searchField {
+  height: 31px;
+  width: 150px;
+}
+
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 35vw;
+  margin-bottom: 25px;
+}
+
+.card {
+  border: .5px solid black;
+  border-radius: 5px;
+  width: 60vw;
+  margin-top: 25px;
+}
+
+.cardHead {
+  margin-top: 10px;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.cardHead img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 100%;
+  padding: 4px;
+  border: 4px solid red;
+}
+
+.cardTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 25px;
+}
+
+.cardHead,
+.iconsContainer,
+.likes,
+.comments,
+.cardTextField,
+.description {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.iconsContainer img {
+  width: 30px;
+  height: 30px;
+
+}
+
+.clickableIcon {
+  cursor: pointer;
+}
+
+.likes {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.comments {
+  margin-bottom: 5px;
+}
+
+.leftIcons {
+  display: flex;
+  gap: 10px;
+}
+
+.cardTextField {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.cardTextField input {
+  border: none;
+  outline: none;
+}
+
+.cardTextField button {
+  border: none;
+  font-weight: bold;
+  color: blue;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.postImage {
+  box-sizing: border-box;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.footer {
+  width: 230px;
+  margin-bottom: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
