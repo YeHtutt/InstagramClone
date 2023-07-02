@@ -110,7 +110,7 @@ function save(i) {
 
 function load(i) {
     let saveCommentsAsText = localStorage.getItem(`post[${i}]`);
-    if(saveCommentsAsText) {
+    if (saveCommentsAsText) {
         posts[i]['comments'] = JSON.parse(saveCommentsAsText);
     }
 }
@@ -128,14 +128,14 @@ function addLike(i) {
     let heart = document.getElementById(`heartIcon${i}`);
     let heartEmpty = 'img/heart.png';
     let heartFilledRed = 'img/heart_red.png';
-    
+
     let like = document.getElementById(`likes${i}`);
 
-    if(heart.getAttribute("src") === heartEmpty) {
+    if (heart.getAttribute("src") === heartEmpty) {
         heart.setAttribute("src", heartFilledRed);
-         let updatedLikes = posts[i]['likes'] + 1;
-         like.innerHTML = `<b>Gefällt ${updatedLikes} Mal</b>`;
-    }else {
+        let updatedLikes = posts[i]['likes'] + 1;
+        like.innerHTML = `<b>Gefällt ${updatedLikes} Mal</b>`;
+    } else {
         heart.src = heartEmpty;
         let likesOldNumber = posts[i]['likes'] - 0;
         like.innerHTML = `<b>Gefällt ${likesOldNumber} Mal</b>`;
@@ -148,10 +148,10 @@ function addBookMark(i) {
     let bookMarkEmpty = 'img/bookmark_black.png';
     let bookMarkFilled = 'img/bookmark_filled_red_orange.png';
 
-    if(bookMarked.getAttribute("src") === bookMarkEmpty){
+    if (bookMarked.getAttribute("src") === bookMarkEmpty) {
         //bookMarked.setAttribute("src", bookMarkFilled);
         bookMarked.src = bookMarkFilled;
-    }else {
+    } else {
         bookMarked.src = bookMarkEmpty;
     }
 }
@@ -160,7 +160,25 @@ function addBookMark(i) {
 var buttons = document.getElementsByClassName("demo-button");
 // Klickereignis-Listener für jeden Button hinzufügen
 for (var i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function() {
-    alert("Dies ist eine Demo-Version. Die Funktion ist in der Demo deaktiviert.");
-  });
+    buttons[i].addEventListener("click", function () {
+        alert("Dies ist eine Demo-Version. Die Funktion ist in der Demo deaktiviert.");
+    });
 }
+
+
+var container = document.getElementById("peopleContent");
+var containerWidth = container.scrollWidth;
+
+document.getElementById("scrollLeft").addEventListener("click", function () {
+    var scrollLeft = container.scrollLeft;
+    if (scrollLeft > 0) {
+        container.scrollTo(scrollLeft - 70, 0); // Scrollen nach links
+    }
+});
+
+document.getElementById("scrollRight").addEventListener("click", function () {
+    var scrollLeft = container.scrollLeft;
+    if (scrollLeft < containerWidth) {
+        container.scrollTo(scrollLeft + 70, 0); // Scrollen nach rechts
+    }
+});
